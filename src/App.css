@@ -327,3 +327,54 @@ button {
     padding: 10px;
     font-size: 14px;
 }
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-container {
+    display: flex;
+    height: 40px;
+    width: 180px;
+    font-size: 16px;
+    background-color: white;
+    font-weight: bolder;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+
+    &.inverted-button {
+        color: rgb(44, 44, 44);
+        border: solid 2px pink;
+        width: 180px;
+
+        &:hover {
+            border: none;
+            background-color: rgb(99, 99, 99);
+            color: white;
+        }
+    }
+
+    &.default-button {
+        background-color: rgb(71, 135, 102);
+        color: rgb(255, 255, 255);
+
+        &:hover {
+            background-color: rgb(255, 144, 162);
+        }
+    }
+
+    &.rounded-button {
+        background-color: rgb(47, 98, 117);
+        color: rgb(229, 229, 229);
+        border-radius: 24px;
+
+        &:hover {
+            background-color: rgb(105, 146, 182);
+        }
+    }
+}

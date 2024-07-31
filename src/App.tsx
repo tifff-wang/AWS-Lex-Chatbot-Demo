@@ -1,13 +1,12 @@
 import React, { useState } from 'react'
 import './App.css'
 import AvatarExample from './components/AvatarExample'
-import ButtonExample from './components/ButtonExample'
+import ButtonExample from './pages/ButtonExample'
 import DropdownExample from './components/DropdownExample'
 import MeetingListExample from './components/MeetingListExample'
 import MessageListExample from './components/MessageListExample'
-import NavbarExample from './components/NavbarExample'
 import PopupExample from './components/PopupExample'
-import Accordion from './components/Accordion'
+import AccordionExample from './pages/AccordionExample'
 
 const App: React.FC = () => {
     const [showComponent, setShowComponent] = useState('')
@@ -25,7 +24,7 @@ const App: React.FC = () => {
             case 'meetingList':
                 return <MeetingListExample />
             case 'accordion':
-                return <Accordion />
+                return <AccordionExample />
             case 'popup':
                 return <PopupExample />
             default:
