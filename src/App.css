@@ -110,7 +110,7 @@ button {
 }
 
 .chat-window-container {
-    width: 40%;
+    width: 30%;
     min-width: 350px;
     position: fixed;
     bottom: 50px;
