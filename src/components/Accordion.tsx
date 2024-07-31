@@ -1,65 +1,72 @@
 import { useState } from 'react'
-import { GoChevronDown, GoChevronLeft } from 'react-icons/go'
-const items = [
+import { RiArrowDropLeftLine, RiArrowDropDownLine } from 'react-icons/ri'
+import { AccordionDataModel } from '../models/accordionDataModel'
+
+const items: AccordionDataModel[] = [
     {
-        id: 'l2kj5',
-        label: 'Can I use React on a project?',
+        id: '1',
+        label: 'What is this repo for?',
         content:
-            'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
+            'This repo is to store a variety of reusable UI components for my futher projects to use. Super handy!',
     },
     {
-        id: 'lk2j35lkj',
-        label: 'Can I use Javascript on a project?',
+        id: '2',
+        label: 'Do you have other projects?',
         content:
-            'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
+            'Yes, I have lots of projects including fullstack and backend focused ones. Feel free to check my github.',
     },
     {
-        id: 'l1kj2i0g',
-        label: 'Can I use CSS on a project?',
+        id: '3',
+        label: 'What are the future possibilities?',
         content:
-            'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
+            'I will continue to add different UI components to extend my component family',
     },
 ]
 
 function Accordion() {
     const [expandedIndex, setExpandedIndex] = useState(-1)
 
-    const handleClick = (nextIndex: number) => {
+    const handleClick = (clickedIndex: number) => {
         setExpandedIndex((currentExpandedIndex) => {
-            if (currentExpandedIndex === nextIndex) {
+            if (currentExpandedIndex === clickedIndex) {
                 return -1
             } else {
-                return nextIndex
+                return clickedIndex
             }
         })
     }
 
-    const renderedItems = items.map((item: any, index: number) => {
-        const isExpanded = index === expandedIndex
+    return (
+        <div className="accordion-container">
+            {items.map((item: any, index: number) => {
+                return (
+                    <div key={item.id}>
+                        <div
+                            className="accordion-section-container"
+                            onClick={() => handleClick(index)}
+                        >
+                            <div className="accordion-bar">
+                                {item.label}
+                                <span className="arrow-icon">
+                                    {index === expandedIndex ? (
+                                        <RiArrowDropDownLine />
+                                    ) : (
+                                        <RiArrowDropLeftLine />
+                                    )}
+                                </span>
+                            </div>
 
-        const icon = (
-            <span className="arrow-icon">
-                {isExpanded ? <GoChevronDown /> : <GoChevronLeft />}
-            </span>
-        )
-
-        return (
-            <div key={item.id}>
-                <div
-                    className="accordion-bar"
-                    onClick={() => handleClick(index)}
-                >
-                    {item.label}
-                    {icon}
-                </div>
-                {isExpanded && (
-                    <div className="expend-content">{item.content}</div>
-                )}
-            </div>
-        )
-    })
-
-    return <div className="accordion-container">{renderedItems}</div>
+                            {index === expandedIndex && (
+                                <div className="expend-content">
+                                    {item.content}
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )
+            })}
+        </div>
+    )
 }
 
 export default Accordion

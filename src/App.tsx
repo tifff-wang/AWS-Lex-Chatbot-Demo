@@ -7,6 +7,7 @@ import MeetingListExample from './components/MeetingListExample'
 import MessageListExample from './components/MessageListExample'
 import NavbarExample from './components/NavbarExample'
 import PopupExample from './components/PopupExample'
+import Accordion from './components/Accordion'
 
 const App: React.FC = () => {
     const [showComponent, setShowComponent] = useState('')
@@ -24,7 +25,7 @@ const App: React.FC = () => {
             case 'meetingList':
                 return <MeetingListExample />
             case 'accordion':
-                return <NavbarExample />
+                return <Accordion />
             case 'popup':
                 return <PopupExample />
             default:
@@ -127,7 +128,7 @@ const App: React.FC = () => {
                 </button>
                 <button
                     style={
-                        showComponent === 'navbar'
+                        showComponent === 'accordion'
                             ? {
                                   backgroundColor: '#ffffff',
                                   color: '#ffc6ff',
@@ -139,9 +140,9 @@ const App: React.FC = () => {
                                   border: '2px solid #ffc6ff',
                               }
                     }
-                    onClick={() => setShowComponent('navbar')}
+                    onClick={() => setShowComponent('accordion')}
                 >
-                    Navbar
+                    Accordion
                 </button>
                 <button
                     style={
