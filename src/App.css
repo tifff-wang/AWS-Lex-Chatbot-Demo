@@ -420,3 +420,25 @@ button {
 .dropdown-option:hover {
     background-color: #f6f6f6;
 }
+
+/* TABLE */
+.table-container {
+    width: 500px;
+    border-collapse: collapse;
+}
+
+.header-row th,
+.table-cells {
+    padding: 4px 16px;
+    text-align: left;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.header-row {
+    background-color: #f4f4f4;
+    height: 40px;
+}
+
+.body-row:hover {
+    background-color: #e9e9e9;
+}

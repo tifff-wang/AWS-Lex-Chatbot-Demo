@@ -7,6 +7,7 @@ import MeetingListExample from './components/MeetingListExample'
 import MessageListExample from './components/MessageListExample'
 import PopupExample from './components/PopupExample'
 import AccordionExample from './pages/AccordionExample'
+import TableExample from './pages/TableExample'
 
 const App: React.FC = () => {
     const [showComponent, setShowComponent] = useState('')
@@ -15,14 +16,12 @@ const App: React.FC = () => {
         switch (component) {
             case 'messageList':
                 return <MessageListExample />
-            case 'avatar':
-                return <AvatarExample />
+            case 'table':
+                return <TableExample />
             case 'button':
                 return <ButtonExample />
             case 'dropdown':
                 return <DropdownExample />
-            case 'meetingList':
-                return <MeetingListExample />
             case 'accordion':
                 return <AccordionExample />
             case 'popup':
@@ -53,27 +52,10 @@ const App: React.FC = () => {
                 >
                     Message List
                 </button>
+
                 <button
                     style={
-                        showComponent === 'meetingList'
-                            ? {
-                                  backgroundColor: '#ffffff',
-                                  color: '#ccd5ae',
-                                  border: '2px solid #ccd5ae',
-                              }
-                            : {
-                                  backgroundColor: '#ccd5ae',
-                                  color: '#ffffff',
-                                  border: '2px solid #ccd5ae',
-                              }
-                    }
-                    onClick={() => setShowComponent('meetingList')}
-                >
-                    Meeting List
-                </button>
-                <button
-                    style={
-                        showComponent === 'avatar'
+                        showComponent === 'table'
                             ? {
                                   backgroundColor: '#ffffff',
                                   color: '#9bf6ff',
@@ -85,9 +67,9 @@ const App: React.FC = () => {
                                   border: '2px solid #9bf6ff',
                               }
                     }
-                    onClick={() => setShowComponent('avatar')}
+                    onClick={() => setShowComponent('table')}
                 >
-                    Avatar
+                    Table
                 </button>
                 <button
                     style={
