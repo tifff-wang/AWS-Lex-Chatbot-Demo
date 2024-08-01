@@ -19,7 +19,7 @@ import { createSentTextMessage } from '../utils/common'
 
 let clearRef = () => {}
 
-function useForceUpdate() {
+const useForceUpdate = () => {
     const [value, setValue] = useState(0)
     return () => setValue(() => value + 1)
 }
