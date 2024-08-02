@@ -4,9 +4,7 @@ import { MessageList } from 'react-chat-elements'
 import {
     fileMessage,
     photoMessage,
-    systemMessage,
     textMessage,
-    sentTextMessage,
 } from '../utils/MessageTypes'
 import { RiAttachment2 } from 'react-icons/ri'
 import { FaArrowCircleUp } from 'react-icons/fa'
@@ -19,11 +17,6 @@ import { createSentTextMessage } from '../utils/common'
 
 let clearRef = () => {}
 
-const useForceUpdate = () => {
-    const [value, setValue] = useState(0)
-    return () => setValue(() => value + 1)
-}
-
 function MessageListExample() {
     const sentTextMessage1 = createSentTextMessage('Sure!')
     const sentTextMessage2 = createSentTextMessage('Received, thanks!')
@@ -33,7 +26,6 @@ function MessageListExample() {
         fileMessage,
         photoMessage,
         sentTextMessage2,
-        // systemMessage,
     ]
     const [messageListArray, setMessageListArray] =
         useState<any>(chatDemoMessages)
